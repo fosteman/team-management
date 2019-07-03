@@ -3,9 +3,10 @@ import MainContainer from './MainContainer';
 import axios from 'axios';
 import moment from 'moment';
 const url = "https://fosteman-mongo-backend.herokuapp.com/";
-class Projects extends Component {
+
+export default class Projects extends Component {
     constructor() {
-        super()
+        super();
         this.state = {
             projects: []
         }
@@ -50,5 +51,3 @@ class Projects extends Component {
         );
     }
 }
-
-export default Projects;

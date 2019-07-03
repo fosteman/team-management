@@ -4,15 +4,13 @@ import ProjectPanel from './ProjectPanel';
 import TeamsPanel from './TeamsPanel';
 import EmployeesPanel from './EmployeesPanel';
 
-
-class Overview extends Component {
-  render() {
+function Overview(props) {
     return (
-      <MainContainer sidebar={this.props.title}>
-        <h1 className="page-header">{this.props.title}</h1>
+      <MainContainer sidebar={props.title}>
+        <h1 className="page-header">{props.title}</h1>
         <div className="row">
           <div className="col-md-4">
-            <ProjectPanel title="Projects" />
+            <ProjectPanel title="Projects"/>
           </div>
           <div className="col-md-4">
             <TeamsPanel title="Teams"/>
@@ -23,7 +21,6 @@ class Overview extends Component {
         </div>
       </MainContainer>
     );
-  }
 }
 
 export default Overview;
