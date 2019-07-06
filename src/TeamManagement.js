@@ -1,35 +1,54 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import Overview from './Overview';
 import Projects from './Projects';
 import Teams from './Teams';
 import Employees from './Employees';
 import NotFound from './NotFound';
 import {Switch, Route} from 'react-router-dom';
-const url = "https://fosteman-mongo-backend.herokuapp.com/"; //TODO make use of state manager: Context API / Redux / Relay / Apollo Client
+import axios from "axios";
+const url = "https://fosteman-mongo-backend.herokuapp.com/";
 
-class TeamManagement extends Component {
-    //state management
-  render() {
+function TeamManagement() {
+    const [employees, setEmployees] = useState([]);
+    const [teams, setTeams] = useState([]);
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        console.log('TeamManagement is mount! Fetching backendAPI!');
+        axios.get(url + 'employees')
+            .then(res => setEmployees(res.data))
+            .catch(err => console.error('error fetching resful api!'));
+
+        axios.get(url + 'projects')
+            .then(res => setProjects(res.data))
+            .catch(err => console.error('error fetching resful api!'));
+
+        axios.get(url + 'teams')
+            .then(res => setTeams(res.data))
+            .catch(err => console.error('error fetching resful api!'));
+
+
+    }, []);
+
     return (
       <Switch>
         <Route exact path='/' render={() => (
-          <Overview title="Overview" />
+          <Overview data={{projects, teams, employees}} title="Overview" />
         )} />
         <Route exact path='/projects' render={() => (
-          <Projects title="Projects" />
+          <Projects projects={projects} title="Projects" />
         )} />
         <Route exact path='/teams' render={() => (
-          <Teams title="Teams" />
+          <Teams teams={teams} title="Teams" />
         )} />
         <Route exact path='/employees' render={() => (
-          <Employees title="Employees" />
+          <Employees employees={employees} title="Employees" />
         )} />
         <Route render={() => (
           <NotFound title="Not Found" />
         )} />
       </Switch>
     );
-  }
-}
+};
 
 export default TeamManagement;
