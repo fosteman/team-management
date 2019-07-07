@@ -3,6 +3,7 @@
   "version": "4.0.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
     "axios": "^0.16.2",
     "fs": "0.0.1-security",
     "moment": "^2.18.1",
