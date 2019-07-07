@@ -1,28 +1,45 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MainContainer from "./MainContainer";
+import Typography from "@material-ui/core/Typography";
+import Table from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import {TableCell } from "@material-ui/core";
+import TableBody from "@material-ui/core/TableBody";
+import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import Card from "@material-ui/core/Card";
 
 const TeamsPanel = ({title, teams}) => (
-    <div className="panel panel-default">
-        <div className="panel-heading">
-            <h3 className="panel-title">{title}</h3>
-        </div>
-        <div className="panel-body">
-            <div className="table-responsive overview-table">
-                <table className="table table-striped table-bordered">
-                    <tbody>
-                        {teams.map((team, index) => {
-                            return (
-                                <tr>
-                                    <td key={index}>{team.TeamName  }</td>
-                                    <td key={index}>{team.Employees.length} Employees</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-            </div>
-            <Link to="/teams" className="btn btn-primary form-control">View All Team Data</Link>
-        </div>
-    </div>
+
+    <Card>
+        <CardHeader title={title} titleTypographyProps={{'variant': 'h3'}}/>
+        <CardContent>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Name</TableCell>
+                        <TableCell>Employees</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {teams.map((team, index) => (
+                        <TableRow>
+                            <TableCell key={index}>{team.TeamName}</TableCell>
+                            <TableCell key={index}>{team.Employees.lenght} Employees</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </CardContent>
+        <CardActions>
+            <Button>
+                <Link to="/teams" className="btn btn-primary form-control">View All Team Data</Link>
+            </Button>
+        </CardActions>
+    </Card>
 );
 export default TeamsPanel
