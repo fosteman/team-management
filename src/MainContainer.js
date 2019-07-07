@@ -2,17 +2,16 @@ import React from 'react';
 import NavBar from './NavBar';
 import SideBar from './SideBar';
 
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
 const MainContainer = ({sidebar, children}) => (
-    <div>
+    <Paper>
         <NavBar/>
-        <div className="container-fluid">
-            <div className="row">
-                <SideBar highlight={sidebar} />
-                <div className=" col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    {children}
-                </div>
-            </div>
-        </div>
-    </div>
+        <SideBar highlight={sidebar} />
+        <Grid container spacing={3}>
+            <Grid className="main" xs={6}>{children}</Grid>
+        </Grid>
+    </Paper>
 );
 export default MainContainer
