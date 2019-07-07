@@ -7,12 +7,11 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
+import Typography from '@material-ui/core/Typography';
 
 const Employees = ({employees, title}) => (
     <MainContainer sidebar={title}>
-        <h1>{title}</h1>
+        <Typography variant='h1'>{title}</Typography>
         <Table>
             <TableHead>
                 <TableRow>
@@ -38,4 +37,5 @@ const Employees = ({employees, title}) => (
         </Table>
     </MainContainer>
 );
+
 export default Employees
