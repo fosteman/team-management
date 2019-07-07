@@ -1,54 +1,43 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import moment from 'moment';
-import {Link} from 'react-router-dom';
-const url = "https://fosteman-mongo-backend.herokuapp.com/";
+import React from 'react';
+import Table from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import {TableCell } from "@material-ui/core";
+import TableBody from "@material-ui/core/TableBody";
+import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import Card from "@material-ui/core/Card";
+import moment from "moment";
 
-class ProjectPanel extends Component {
-    constructor() {
-        super()
-        this.state = {
-            projects: []
-        }
-    }
+const ProjectPanel =({title,projects}) => (
 
-    componentDidMount() {
-        axios.get(url + 'projects')
-        .then( res => {
-            const projects = res.data;  
-            this.setState({
-                projects
-             });
-          });
-    }
+    <Card>
+        <CardHeader title={title} titleTypographyProps={{'variant':'h3'}}/>
+        <CardContent>
+            <Table>
+                <TableHead>
+                    <TableRow>Project</TableRow>
+                    <TableRow>Active</TableRow>
+                </TableHead>
+                <TableBody>
+                    {projects.map((project, index)=>(
+                        <TableRow>
 
-    render() {
-        return (
-            <div className="panel panel-default">
-                <div className="panel-heading">
-                    <h3 className="panel-title">{this.props.title}</h3>
-                </div>
-                <div className="panel-body">
-                    <div className="table-responsive overview-table">
-                        <table className="table table-striped table-bordered">
-                            <tbody>
-                                { this.state.projects.map((project, index) => {
-                                    var days = moment().diff([project.ProjectStartDate], 'days');
-                                    return (
-                                        <tr>
-                                            <td key={index}>{project.ProjectName}</td>
-                                            <td key={index}>Active {days} days</td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
-                    </div>
-                    <Link to="/projects" className="btn btn-primary form-control">View All Project Data</Link>
-                </div>
-            </div>
-        );
-    }
-}
+                            <TableCell key={index}> {project.ProjectName} </TableCell>
+                            <TableCell key={index}> Active {moment().diff([project.ProjectStartDate], 'days')} days</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </CardContent>
+        <CardActions>
+            <Button  href={"/project"}/>
+        </CardActions>
+    </Card>
+);
+
+
 
 export default ProjectPanel;

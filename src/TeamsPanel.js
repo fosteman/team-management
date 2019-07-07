@@ -1,7 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import MainContainer from "./MainContainer";
-import Typography from "@material-ui/core/Typography";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
@@ -36,9 +33,7 @@ const TeamsPanel = ({title, teams}) => (
             </Table>
         </CardContent>
         <CardActions>
-            <Button>
-                <Link to="/teams" className="btn btn-primary form-control">View All Team Data</Link>
-            </Button>
+            <Button href={"/teams"}/>
         </CardActions>
     </Card>
 );
