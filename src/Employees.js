@@ -1,7 +1,6 @@
 import React from 'react';
 import MainContainer from './MainContainer';
 import moment from 'moment';
-
 const Employees = ({employees, title}) => (
     <MainContainer sidebar={title}>
         <h1 className="page-header">{title}</h1>
