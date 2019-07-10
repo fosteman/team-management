@@ -17,15 +17,15 @@ function TeamManagement() {
         console.log('TeamManagement is mount! Fetching backendAPI!');
         axios.get(url + 'employees')
             .then(res => setEmployees(res.data))
-            .catch(err => console.error('error fetching resful api!'));
+            .catch(err => console.error('error fetching restful api!'));
 
         axios.get(url + 'projects')
             .then(res => setProjects(res.data))
-            .catch(err => console.error('error fetching resful api!'));
+            .catch(err => console.error('error fetching restful api!'));
 
         axios.get(url + 'teams')
             .then(res => setTeams(res.data))
-            .catch(err => console.error('error fetching resful api!'));
+            .catch(err => console.error('error fetching restful api!'));
 
 
     }, []);
@@ -49,6 +49,6 @@ function TeamManagement() {
         )} />
       </Switch>
     );
-};
+}
 
 export default TeamManagement;
