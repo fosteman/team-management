@@ -9,7 +9,9 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
+**.zip
+package-lock.json
+build/
 # Generated files
 .idea/**/contentModel.xml
 
