@@ -1,17 +1,12 @@
 import React from 'react';
 import MainContainer from './MainContainer.js'
+import Typography from "@material-ui/core/Typography";
 
-class NotFound extends React.Component {
-    render() {
-        return (
-            <div>
-                <MainContainer>
-                    <h1 className="page-header">{this.props.title}</h1>
-                    Page Not Found
-                </ MainContainer>
-            </div>
-        );
-    }
-}
+const NotFound = ({title}) => (
+    <MainContainer>
+        <Typography variant={'h2'}>{title}</Typography>
+        Page Not Found
+    </ MainContainer>
+);
 
 export default NotFound;
