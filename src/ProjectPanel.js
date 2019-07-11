@@ -11,11 +11,10 @@ import CardHeader from "@material-ui/core/CardHeader";
 import Card from "@material-ui/core/Card";
 import moment from "moment";
 
-const ProjectPanel =({title,projects}) => (
-
+const ProjectPanel =({style, title,projects}) => (
     <Card>
         <CardHeader title={title} titleTypographyProps={{'variant':'h3'}}/>
-        <CardContent>
+        <CardContent style={style}>
             <Table>
                 <TableHead>
                     <TableRow>Project</TableRow>
@@ -24,7 +23,6 @@ const ProjectPanel =({title,projects}) => (
                 <TableBody>
                     {projects.map((project, index)=>(
                         <TableRow>
-
                             <TableCell key={index}> {project.ProjectName} </TableCell>
                             <TableCell key={index}> Active {moment().diff([project.ProjectStartDate], 'days')} days</TableCell>
                         </TableRow>

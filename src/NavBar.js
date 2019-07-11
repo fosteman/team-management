@@ -4,9 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 const NavBar = () => (
-    <AppBar position="fixed">
+    <AppBar position="absolute">
         <Toolbar>
-            <Typography variant="h1" noWrap>
+            <Typography variant="h2" noWrap>
                 Team Management Portal
             </Typography>
         </Toolbar>

@@ -10,11 +10,11 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Card from "@material-ui/core/Card";
 
-const  EmployeesPanel = ({title,employees})=>(
+const EmployeesPanel = ({style, title,employees}) => (
     <Card>
-        <CardHeader title={title} titleTypegraphyProps={{'variant':'h2'}}/>
-        <CardContent>
-            <Table>
+        <CardHeader title={title} titleTypographyProps={{'variant':'h3'}}/>
+        <CardContent style={style}>
+            <Table >
                 <TableHead>
                     <TableRow>
                         <TableCell>Name</TableCell>
@@ -22,10 +22,10 @@ const  EmployeesPanel = ({title,employees})=>(
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {employees.map((employee,index)=>(
+                    {employees.map((employee, index) => (
                         <TableRow>
                             <TableCell key={index}>{employee.FirstName} {employee.LastName} </TableCell>
-                            <TableCell key={index}>employee.Position.PositionName</TableCell>
+                            <TableCell key={index}>{employee.Position.PositionName}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -37,4 +37,4 @@ const  EmployeesPanel = ({title,employees})=>(
     </Card>
 );
 
-export default EmployeesPanel;
+export default EmployeesPanel

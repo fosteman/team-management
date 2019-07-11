@@ -10,11 +10,10 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Card from "@material-ui/core/Card";
 
-const TeamsPanel = ({title, teams}) => (
-
+const TeamsPanel = ({style, title, teams}) => (
     <Card>
         <CardHeader title={title} titleTypographyProps={{'variant': 'h3'}}/>
-        <CardContent>
+        <CardContent style={style}>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -26,7 +25,7 @@ const TeamsPanel = ({title, teams}) => (
                     {teams.map((team, index) => (
                         <TableRow>
                             <TableCell key={index}>{team.TeamName}</TableCell>
-                            <TableCell key={index}>{team.Employees.lenght} Employees</TableCell>
+                            <TableCell key={index}>{team.Employees.length} Employees</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
