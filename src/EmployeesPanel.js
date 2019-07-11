@@ -12,7 +12,7 @@ import Card from "@material-ui/core/Card";
 
 const  EmployeesPanel = ({title,employees})=>(
     <Card>
-        <CardHeader title={title} titleTypegraphyProps={{'variant':'h3'}}/>
+        <CardHeader title={title} titleTypegraphyProps={{'variant':'h2'}}/>
         <CardContent>
             <Table>
                 <TableHead>

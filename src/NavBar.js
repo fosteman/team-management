@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 const NavBar = () => (
     <AppBar position="fixed">
         <Toolbar>
-            <Typography variant="h6" noWrap>
+            <Typography variant="h1" noWrap>
                 Team Management Portal
             </Typography>
         </Toolbar>

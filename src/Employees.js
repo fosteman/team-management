@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 
 const Employees = ({employees, title}) => (
     <MainContainer sidebar={title}>
-        <Typography variant='h1'>{title}</Typography>
+        <Typography variant='h2'>{title}</Typography>
         <Table>
             <TableHead>
                 <TableRow>
