@@ -4,7 +4,7 @@ import Projects from './Projects';
 import Teams from './Teams';
 import Employees from './Employees';
 import NotFound from './NotFound';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import axios from "axios";
 const url = "https://fosteman-mongo-backend.herokuapp.com/";
 
@@ -32,17 +32,20 @@ function TeamManagement() {
 
     return (
       <Switch>
+        <Route exact path='/team-management' render={() => (
+        <Redirect to={'/'} />
+        )} />
         <Route exact path='/' render={() => (
-          <Overview data={{projects, teams, employees}} title="Overview" />
+        <Overview data={{projects, teams, employees}} title="Overview" />
         )} />
         <Route exact path='/projects' render={() => (
-          <Projects projects={projects} title="Projects" />
+        <Projects projects={projects} title="Projects" />
         )} />
         <Route exact path='/teams' render={() => (
-          <Teams teams={teams} title="Teams" />
+        <Teams teams={teams} title="Teams" />
         )} />
         <Route exact path='/employees' render={() => (
-          <Employees employees={employees} title="Employees" />
+        <Employees employees={employees} title="Employees" />
         )} />
         <Route render={() => (
           <NotFound title="Not Found" />
@@ -51,4 +54,4 @@ function TeamManagement() {
     );
 }
 
-export default TeamManagement;
+export default TeamManagement
