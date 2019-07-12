@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<br><br>
+<div class="center">
+  <h2>Positons</h2>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non odio sed eros tristique bibendum.
+  </p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <thead>
+            <td><h4>Position Title</h4></td>
+            <td><h4>Position Description</h4></td>
+            <td><h4>Salary</h4></td>
+          </thead>
+          <tbody *ngFor="let position of positions">
+            <tr>
+              <td>{{ position.PositionName }}</td>
+              <td>{{ position.PositionDescription }}</td>
+              <td>${{ position.PositionBaseSalary | number:'.2' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
