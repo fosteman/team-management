@@ -1,5 +1,5 @@
 import React from 'react';
-import MainContainer from './MainContainer';
+import MainContainer from '../MainContainer';
 import moment from 'moment';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';

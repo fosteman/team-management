@@ -1,8 +1,8 @@
 import React from 'react'
 import MainContainer from './MainContainer'
-import ProjectPanel from './ProjectPanel'
-import TeamsPanel from './TeamsPanel'
-import EmployeesPanel from './EmployeesPanel'
+import ProjectPanel from './components/panels/ProjectPanel'
+import TeamsPanel from './components/panels/TeamsPanel'
+import EmployeesPanel from './components/panels/EmployeesPanel'
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid";
 

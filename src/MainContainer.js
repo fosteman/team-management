@@ -1,6 +1,6 @@
 import React from 'react';
-import NavBar from './NavBar';
-import SideBar from './SideBar';
+import NavBar from './components/NavBar';
+import SideBar from './components/SideBar';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const MainContainer = ({sidebar, children}) => {
+const MainContainer = ({children}) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
